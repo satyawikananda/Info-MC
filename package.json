@@ -1,0 +1,27 @@
+{
+  "name": "submission-pwa-2",
+  "version": "1.0.0",
+  "description": "Submission pwa ke 2 dicoding",
+  "main": "index.js",
+  "author": "Satya wikananda <https://github.com/satyawikananda>",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "idb": "^5.0.4",
+    "materialize-css": "^1.0.0-rc.2",
+    "regenerator-runtime": "^0.13.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.6.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "style-loader": "^1.2.1",
+    "web-push": "^3.4.4",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
+  }
+}
