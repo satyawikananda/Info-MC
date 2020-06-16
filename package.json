@@ -4,7 +4,12 @@
   "description": "Submission pwa ke 2 dicoding",
   "main": "index.js",
   "author": "Satya wikananda <https://github.com/satyawikananda>",
+  "scripts": {
+    "start:dev": "webpack-dev-server --config webpack.dev.js --open",
+    "build": "webpack --config webpack.prod.js"
+  },
   "dependencies": {
+    "file-loader": "^6.0.0",
     "font-awesome": "^4.7.0",
     "idb": "^5.0.4",
     "materialize-css": "^1.0.0-rc.2",
