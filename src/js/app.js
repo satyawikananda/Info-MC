@@ -1,8 +1,8 @@
 import loadnav from './components/nav';
 import content from './components/content';
-import getTanding from './pages/tanding';
 import 'regenerator-runtime';
 import '../style/style.css';
+import '../style/material-icons.css';
 
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.querySelectorAll('.sidenav');
@@ -11,5 +11,4 @@ document.addEventListener('DOMContentLoaded', () => {
   if (page === '') page = 'home';
   content(page);
   loadnav();
-  getTanding();
 });

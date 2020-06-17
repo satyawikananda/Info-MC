@@ -1,5 +1,6 @@
-import { BASE_URL } from '../const';
+import { BASE_URL, TOKEN } from '../const';
 import { status } from '../helpers/status';
+import { tanding } from '../components/tanding';
 export default async function getTanding() {
   const url = new URL(`${BASE_URL}teams/65/matches`),
     params = { status: 'SCHEDULED' };
@@ -8,7 +9,7 @@ export default async function getTanding() {
   );
   await fetch(url, {
     headers: {
-      'X-Auth-Token': 'b015cf4cb4054df0b752aad38fc24cb8',
+      'X-Auth-Token': TOKEN,
     },
   })
     .then(status)
@@ -16,6 +17,14 @@ export default async function getTanding() {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
+      let tandingHtml = '';
+
+      data.matches.forEach((res) => {
+        tandingHtml += tanding(res);
+        console.log(res);
+      });
+      return (document.getElementById(
+        'data-tanding',
+      ).innerHTML = tandingHtml);
     });
 }

@@ -1,3 +1,5 @@
+import getTanding from '../data/dataTanding';
+
 export default function content(page) {
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
@@ -5,6 +7,7 @@ export default function content(page) {
       let content = document.getElementById('body-content');
       if (this.status === 200) {
         content.innerHTML = xhttp.responseText;
+        loadApi(page);
       } else if (this.status === 404) {
         content.innerHTML = `<center><h2>Page not found :(</h2></center>`;
       } else {
@@ -14,4 +17,14 @@ export default function content(page) {
   };
   xhttp.open('GET', `${page}.html`, true);
   xhttp.send();
+}
+
+function loadApi(page) {
+  switch (page) {
+    case 'tanding':
+      getTanding();
+      break;
+    default:
+      break;
+  }
 }
