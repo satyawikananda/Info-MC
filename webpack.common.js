@@ -23,11 +23,22 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|svg|jpe?g|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              esModule: false,
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
     new HTMLWebpackPlugin({
-      title: 'Info Bola | Beranda',
+      title: 'MC Wiki | Beranda',
       template: './src/index.html',
       filename: 'index.html',
     }),
@@ -36,9 +47,14 @@ module.exports = {
       filename: 'nav.html',
     }),
     new HTMLWebpackPlugin({
-      title: 'Info Bola | Beranda',
+      title: 'MC Wiki | Beranda',
       template: './src/pages/home.html',
       filename: 'home.html',
+    }),
+    new HTMLWebpackPlugin({
+      title: 'MC Wiki | Pertandingan',
+      template: './src/pages/tanding.html',
+      filename: 'tanding.html',
     }),
   ],
 };
