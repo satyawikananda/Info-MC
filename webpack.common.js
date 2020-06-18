@@ -56,5 +56,9 @@ module.exports = {
       template: './src/pages/tanding.html',
       filename: 'tanding.html',
     }),
+    new HTMLWebpackPlugin({
+      template: './src/pages/pemain.html',
+      filename: 'pemain.html',
+    }),
   ],
 };

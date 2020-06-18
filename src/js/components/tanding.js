@@ -20,7 +20,7 @@ export const tanding = (res) => {
               new Date(res.utcDate),
             )}</h6>
             <center>
-                <a class="waves-effect waves-light btn indigo lighten-2"><i class="material-icons right">favorite_border</i>Pin ini</a>
+              <a class="waves-effect waves-light btn indigo lighten-2"><i class="material-icons right">favorite_border</i>Pin ini</a>
             </center>
         </div>
     </div>

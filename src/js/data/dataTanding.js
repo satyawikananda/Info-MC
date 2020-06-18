@@ -21,10 +21,12 @@ export default async function getTanding() {
 
       data.matches.forEach((res) => {
         tandingHtml += tanding(res);
-        console.log(res);
       });
       return (document.getElementById(
         'data-tanding',
       ).innerHTML = tandingHtml);
+    })
+    .catch((error) => {
+      console.log(`Error: ${new Error(error)}`);
     });
 }

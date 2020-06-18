@@ -1,10 +1,11 @@
 import getTanding from '../data/dataTanding';
+import getPemain from '../data/dataPemain';
 
 export default function content(page) {
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4) {
-      let content = document.getElementById('body-content');
+      let content = document.getElementById('app');
       if (this.status === 200) {
         content.innerHTML = xhttp.responseText;
         loadApi(page);
@@ -23,6 +24,9 @@ function loadApi(page) {
   switch (page) {
     case 'tanding':
       getTanding();
+      break;
+    case 'pemain':
+      getPemain();
       break;
     default:
       break;
