@@ -1,6 +1,8 @@
 import loadnav from './components/nav';
 import content from './components/content';
 import 'regenerator-runtime';
+import '../style/style.css';
+import '../style/material-icons.css';
 
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.querySelectorAll('.sidenav');

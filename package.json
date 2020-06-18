@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "file-loader": "^6.0.0",
-    "font-awesome": "^4.7.0",
+    "gridjs": "^1.6.0",
     "idb": "^5.0.4",
     "materialize-css": "^1.0.0-rc.2",
     "regenerator-runtime": "^0.13.5"
