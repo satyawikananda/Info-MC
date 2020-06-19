@@ -11,9 +11,8 @@
   "dependencies": {
     "file-loader": "^6.0.0",
     "gridjs": "^1.6.0",
-    "idb": "^5.0.4",
-    "materialize-css": "^1.0.0-rc.2",
-    "regenerator-runtime": "^0.13.5"
+    "idb": "2.1.3",
+    "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
