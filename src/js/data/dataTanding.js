@@ -1,12 +1,14 @@
 import { BASE_URL, TOKEN } from '../const';
 import { status } from '../helpers/status';
 import { tanding } from '../components/tanding';
+import { pinJadwal, deletePinJadwal } from '../api/jadwal.controller';
 export default async function getTanding() {
   const url = new URL(`${BASE_URL}teams/65/matches`),
     params = { status: 'SCHEDULED' };
   Object.keys(params).forEach((key) =>
     url.searchParams.append(key, params[key]),
   );
+  let total = '';
   await fetch(url, {
     headers: {
       'X-Auth-Token': TOKEN,
@@ -18,7 +20,7 @@ export default async function getTanding() {
     })
     .then((data) => {
       let tandingHtml = '';
-
+      total += data.matches.length;
       data.matches.forEach((res) => {
         tandingHtml += tanding(res);
       });
@@ -29,4 +31,44 @@ export default async function getTanding() {
     .catch((error) => {
       console.log(`Error: ${new Error(error)}`);
     });
+  // console.log(tanding);
+  for (let i = 0; i < total; i++) {
+    const btn = document.querySelectorAll('.pin_jadwal')[i];
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
+      const logo = btn.dataset.logo;
+      const kompetisi = btn.dataset.kompetisi;
+      const matchday = btn.dataset.matchday;
+      const awayTeam = btn.dataset.awayteam;
+      const homeTeam = btn.dataset.hometeam;
+      const tglTanding = btn.dataset.tgl;
+
+      const icon = document.getElementById(id);
+      if (icon.innerHTML === 'favorite_border') {
+        icon.innerHTML = 'favorite';
+        pinJadwal(
+          id,
+          logo,
+          kompetisi,
+          matchday,
+          awayTeam,
+          homeTeam,
+          tglTanding,
+        ).then(() => {
+          M.toast({
+            html: 'Berhasil pin jadwal',
+            classes: 'rounded',
+          });
+        });
+      } else {
+        icon.innerHTML = 'favorite_border';
+        deletePinJadwal(id).then(() => {
+          M.toast({
+            html: 'Berhasil hapus pin jadwal',
+            classes: 'rounded',
+          });
+        });
+      }
+    });
+  }
 }
