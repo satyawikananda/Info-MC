@@ -1,11 +1,13 @@
 import { Grid, html } from 'gridjs';
 import 'gridjs/dist/theme/mermaid.css';
+import { pinPemain } from '../api/pemain.controller';
 
 export const pemain = (url, token) => {
   const dataTable = new Grid({
     columns: [
       'Nama pemain',
       'Posisi',
+      'Nomor baju',
       'Kewarganegaraan',
       'Tempat lahir',
       'Tanggal lahir',
@@ -26,6 +28,7 @@ export const pemain = (url, token) => {
         data.squad.map((res) => [
           res.name,
           res.position === null ? 'N/a' : res.position,
+          res.shirtNumber === null ? 'N/a' : res.shirtNumber,
           res.nationality,
           res.countryOfBirth,
           res.dateOfBirth,
