@@ -5,8 +5,6 @@ export const pinPemain = (
   nama,
   posisi,
   no_baju,
-  kewarganegaraan,
-  tempat_lahir,
   tgl_lahir,
   status,
 ) => {
@@ -20,8 +18,6 @@ export const pinPemain = (
           nama: nama,
           posisi: posisi,
           no_baju: no_baju,
-          kewarganegaraan: kewarganegaraan,
-          tempat_lahir: tempat_lahir,
           tgl_lahir: tgl_lahir,
           status: status,
         };

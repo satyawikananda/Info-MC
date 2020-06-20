@@ -10,12 +10,6 @@ export const database = idb.open(DB_NAME, 1, (upgradeDb) => {
     pemain.createIndex('nama', 'nama', { unique: false });
     pemain.createIndex('posisi', 'posisi', { unique: false });
     pemain.createIndex('no_baju', 'no_baju', { unique: false });
-    pemain.createIndex('kewarganegaraan', 'kewarganegaraan', {
-      unique: false,
-    });
-    pemain.createIndex('tempat_lahir', 'tempat_lahir', {
-      unique: false,
-    });
     pemain.createIndex('tgl_lahir', 'tgl_lahir', { unique: false });
     pemain.createIndex('status', 'status', { unique: false });
   }
