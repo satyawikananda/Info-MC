@@ -52,7 +52,6 @@ export default async function getTanding() {
     const btn = document.querySelectorAll('.pin_jadwal')[i];
     btn.addEventListener('click', () => {
       const id = btn.dataset.id;
-      const logo = btn.dataset.logo;
       const kompetisi = btn.dataset.kompetisi;
       const matchday = btn.dataset.matchday;
       const awayTeam = btn.dataset.awayteam;
@@ -64,7 +63,6 @@ export default async function getTanding() {
         icon.innerHTML = 'favorite';
         pinJadwal(
           id,
-          logo,
           kompetisi,
           matchday,
           awayTeam,

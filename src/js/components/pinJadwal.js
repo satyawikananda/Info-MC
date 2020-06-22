@@ -4,11 +4,6 @@ export const getPinTanding = (res) => {
   return `
     <div class="col l6 m12 s12">
       <div class="card-panel z-depth-2 large indigo darken1">
-        <center>
-          <img src="${
-            res.ensignUrl
-          }" alt="ensign-logo" class="circle" style="width: 10vh; height: 10vh; object-fit: cover;">
-        </center>
         <p class="center flow-text white-text">${
           res.kompetisi
         } matchday: ${res.matchday}</p>

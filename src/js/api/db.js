@@ -19,7 +19,6 @@ export const database = idb.open(DB_NAME, 1, (upgradeDb) => {
       keyPath: 'id',
       autoIncrement: true,
     });
-    jadwal.createIndex('ensignUrl', 'ensignUrl', { unique: false });
     jadwal.createIndex('kompetisi', 'kompetisi', { unique: false });
     jadwal.createIndex('matchday', 'matchday', { unique: false });
     jadwal.createIndex('away_team', 'away_team', { unique: false });
