@@ -1,5 +1,7 @@
 import getTanding from '../data/dataTanding';
 import getPemain from '../data/dataPemain';
+import pinPlayer from '../data/dataPinPemain';
+import pinJadwal from '../data/dataPinJadwal';
 
 export default function content(page) {
   const xhttp = new XMLHttpRequest();
@@ -27,6 +29,12 @@ function loadApi(page) {
       break;
     case 'pemain':
       getPemain();
+      break;
+    case 'pinpemain':
+      pinPlayer();
+      break;
+    case 'pinjadwal':
+      pinJadwal();
       break;
     default:
       break;

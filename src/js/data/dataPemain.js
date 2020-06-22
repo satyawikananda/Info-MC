@@ -7,6 +7,22 @@ export default async function getPemain() {
   const url = new URL(`${BASE_URL}teams/65`);
   let total = '';
 
+  if ('caches' in window) {
+    caches.match(url).then((response) => {
+      if (response) {
+        response.json().then((data) => {
+          let pemainHtml = '';
+          data.squad.forEach((res, i) => {
+            pemainHtml += pemain(res, i);
+          });
+          return (document.getElementById(
+            'data-pemain',
+          ).innerHTML = pemainHtml);
+        });
+      }
+    });
+  }
+
   await fetch(url, {
     headers: {
       'X-Auth-Token': TOKEN,

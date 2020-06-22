@@ -3,7 +3,7 @@ import convertDate from '../helpers/convertDate';
 export const tanding = (res) => {
   return `
     <div class="col l6 m12 s12">
-      <div class="card-panel large indigo darken1">
+      <div class="card-panel z-depth-2 large indigo darken1">
         <center>
           <img src="${
             res.competition.area.ensignUrl === null
