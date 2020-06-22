@@ -1,6 +1,6 @@
 import loadnav from './components/nav';
 import content from './components/content';
-import runtime from 'serviceworker-webpack-plugin/lib/runtime';
+// import runtime from 'serviceworker-webpack-plugin/lib/runtime';
 import '../style/style.css';
 import '../style/material-icons.css';
 
@@ -14,21 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      const registration = runtime.register();
-      registration
-        .then(() => {
-          console.log('Service worker berhasil dipasang');
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then((registration) => {
+          console.log('SW registered: ', registration);
         })
-        .catch((err) => {
-          console.log(err);
-          console.log('Service worker berhasil dipasang');
+        .catch((registrationError) => {
+          console.log('SW registration failed: ', registrationError);
         });
     });
-  } else {
-    M.toast({
-      html: 'Browser anda tidak mendukung service worker',
-      classes: 'rounded',
-    });
-    console.log('Browser anda tidak mendukung service worker');
   }
 });

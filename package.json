@@ -5,7 +5,7 @@
   "main": "index.js",
   "author": "Satya wikananda <https://github.com/satyawikananda>",
   "scripts": {
-    "start:dev": "webpack-dev-server --config webpack.dev.js --open",
+    "start:dev": "webpack-dev-server --config webpack.dev.js --open --watch",
     "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {

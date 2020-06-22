@@ -1,6 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+// const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: './src/js/app.js',
@@ -69,10 +70,9 @@ module.exports = {
       template: './src/pages/pinjadwal.html',
       filename: 'pinjadwal.html',
     }),
-    new ServiceWorkerWebpackPlugin({
-      entry: path.join(__dirname, 'src/sw.js'),
-      excludes: ['**/.*', '**/*.map', '*.html'],
-      filename: 'sw.js',
+    new WorkboxWebpackPlugin.InjectManifest({
+      swSrc: './src/js/sw.js',
+      swDest: 'sw.js',
     }),
   ],
 };
