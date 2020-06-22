@@ -1,6 +1,7 @@
 import loadnav from './components/nav';
 import content from './components/content';
 import runtime from 'serviceworker-webpack-plugin/lib/runtime';
+import { webPush } from './api/push.config';
 import '../style/style.css';
 import '../style/material-icons.css';
 
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
           console.log(err);
           console.log('Service worker berhasil dipasang');
         });
+      webPush();
     });
   } else {
     M.toast({
