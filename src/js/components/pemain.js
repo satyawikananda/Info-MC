@@ -1,3 +1,5 @@
+import convertDate from '../helpers/convertDate';
+
 export const pemain = (res, i) => {
   return `
   <tr>
@@ -5,7 +7,7 @@ export const pemain = (res, i) => {
     <td>${res.name}</td>
     <td>${res.position === null ? 'N/a' : res.position}</td>
     <td>${res.shirtNumber === null ? 'N/a' : res.shirtNumber}</td>
-    <td>${res.dateOfBirth}</td>
+    <td>${convertDate(res.dateOfBirth, false)}</td>
     <td>${res.role}</td>
     <td>
       <a data-id="${res.id}" data-nama="${res.name}" data-posisi=${

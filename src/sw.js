@@ -1,4 +1,4 @@
-const CACHE_NAME = `info_mc_9`;
+const CACHE_NAME = `info_mc_11`;
 let urlToCache = [
   '/',
   '/nav.html',

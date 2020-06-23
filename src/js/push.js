@@ -22,7 +22,7 @@ const pushSubs = {
   },
 };
 
-const payload = 'City till will die !!!';
+const payload = 'City till will die 🔥 !!!';
 
 const options = {
   gcmAPIKey: '803816201455',

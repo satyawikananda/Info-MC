@@ -21,10 +21,19 @@ export default async function pinJadwal() {
     const btnPinJadwal = document.querySelectorAll('.hps-jadwal')[i];
     btnPinJadwal.addEventListener('click', () => {
       const id = btnPinJadwal.dataset.id;
-      deletePinJadwal(id).then(() => {
+      deletePinJadwal(id).then(async () => {
         M.toast({
           html: 'Berhasil hapus pin pemain',
           classes: 'rounded',
+        });
+        await getPinJadwal().then((data) => {
+          let pinHtml = '';
+          data.forEach((res) => {
+            pinHtml += getPinTanding(res);
+          });
+          return (document.getElementById(
+            'pin-jadwal',
+          ).innerHTML = pinHtml);
         });
       });
     });
