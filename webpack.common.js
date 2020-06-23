@@ -1,5 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 
 module.exports = {
   entry: './src/js/app.js',
@@ -59,6 +60,19 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: './src/pages/pemain.html',
       filename: 'pemain.html',
+    }),
+    new HTMLWebpackPlugin({
+      template: './src/pages/pinpemain.html',
+      filename: 'pinpemain.html',
+    }),
+    new HTMLWebpackPlugin({
+      template: './src/pages/pinjadwal.html',
+      filename: 'pinjadwal.html',
+    }),
+    new ServiceWorkerWebpackPlugin({
+      entry: path.join(__dirname, 'src/sw.js'),
+      excludes: ['**/.*', '**/*.map', '*.html'],
+      filename: 'sw.js',
     }),
   ],
 };

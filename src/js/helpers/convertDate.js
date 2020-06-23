@@ -1,11 +1,50 @@
-export default function convertUtc(date) {
-  const newDate = new Date(
-    date.getTime() + date.getTimezoneOffset() * 60 * 1000,
-  );
-  const offset = date.getTimezoneOffset() / 60;
-  const hours = date.getHours();
+export default function convertUtc(date, withTime) {
+  const tanggal = new Date(date);
+  const year = tanggal.getFullYear();
+  const month = tanggal.getMonth() + 1;
+  const dt = tanggal.getDate();
 
-  newDate.setHours(hours - offset);
+  const monthNames = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'Mei',
+    'Jun',
+    'Jul',
+    'Agu',
+    'Sep',
+    'Okt',
+    'Nop',
+    'Des',
+  ];
 
-  return newDate;
+  if (withTime) {
+    const dateTime = new Date(
+      year +
+        '-' +
+        month +
+        '-' +
+        dt +
+        ' ' +
+        tanggal.getHours() +
+        ':' +
+        tanggal.getMinutes() +
+        ':' +
+        tanggal.getSeconds(),
+    );
+    return (
+      monthNames[dateTime.getMonth()] +
+      ' ' +
+      dateTime.getDate() +
+      ' ' +
+      dateTime.getFullYear() +
+      ' | ' +
+      dateTime.getHours() +
+      ':' +
+      dateTime.getMinutes()
+    );
+  } else {
+    return monthNames[month] + ' ' + dt + ' ' + year;
+  }
 }

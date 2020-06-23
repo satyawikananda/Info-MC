@@ -2,7 +2,6 @@ import { database } from './db';
 
 export const pinJadwal = (
   id,
-  ensignUrl,
   kompetisi,
   matchday,
   away_team,
@@ -16,7 +15,6 @@ export const pinJadwal = (
         const store = tx.objectStore('pin_jadwal');
         const data = {
           id: id,
-          ensignUrl: ensignUrl,
           kompetisi: kompetisi,
           matchday: matchday,
           away_team: away_team,
