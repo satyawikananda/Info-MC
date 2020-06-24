@@ -21,7 +21,7 @@ export const pinPemain = (
           tgl_lahir: tgl_lahir,
           status: status,
         };
-        store.add(data);
+        store.put(data);
         return tx;
       })
       .then((tx) => {

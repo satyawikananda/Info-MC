@@ -21,7 +21,7 @@ export const pinJadwal = (
           home_team: home_team,
           tgl_tanding: tgl_tanding,
         };
-        store.add(data);
+        store.put(data);
         return tx;
       })
       .then((tx) => {
