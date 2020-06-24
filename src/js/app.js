@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch((err) => {
           console.log(err);
-          console.log('Service worker berhasil dipasang');
+          console.log('Service worker gagal dipasang');
         });
       webPush();
     });
